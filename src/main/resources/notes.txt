@@ -1,0 +1,27 @@
+in command prompt
+
+select version();
+create database springbatchdb;
+grant all privileges on springbatchdb.* to root@localhost;
+ 
+change spring starter parent version as <version>2.2.6.RELEASE</version> in pom.xml
+ 
+change password in application.properties and below line
+spring.datasource.url=jdbc:mysql://localhost:3306
+ 
+In mysql workbench run the below commands
+ 
+DROP TABLE IF EXISTS springbatchdb.person;
+
+CREATE TABLE springbatchdb.person  (
+    person_id BIGINT auto_increment NOT NULL PRIMARY KEY,
+    first_name VARCHAR(40),
+    last_name VARCHAR(40),
+    email VARCHAR(100),
+    age INT
+);
+
+select * from springbatchdb.person;
+
+https://www.youtube.com/watch?v=WpQajiHhYzs
+https://github.com/kishanjavatrainer/SpringBootBatchCvsToDb
